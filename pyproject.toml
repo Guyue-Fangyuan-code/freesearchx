@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "freesearchx"
+version = "0.1.1"
+description = "Free web search, arXiv fetch, and citation verification for AI assistants and the CLI. No API key."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [
+    { name = "FreeSearchX contributors" },
+]
+keywords = [
+    "search",
+    "duckduckgo",
+    "arxiv",
+    "claude",
+    "cursor",
+    "ai-agent",
+    "skill",
+    "citation",
+    "cli",
+    "no-api-key",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "ddgs>=9.0.0,<10",
+    "trafilatura>=1.12.0,<3",
+    "requests>=2.31.0,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Guyue-Fangyuan-code/freesearchx"
+Repository = "https://github.com/Guyue-Fangyuan-code/freesearchx"
+Issues = "https://github.com/Guyue-Fangyuan-code/freesearchx/issues"
+Changelog = "https://github.com/Guyue-Fangyuan-code/freesearchx/blob/main/CHANGELOG.md"
+
+[project.scripts]
+freesearchx = "freesearchx:main"
+
+[tool.setuptools]
+package-dir = { "" = "scripts" }
+py-modules = ["freesearchx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["scripts"]

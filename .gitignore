@@ -1,0 +1,35 @@
+# Runtime / build
+cache/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.swp
+*~
+
+# Local secrets / env
+.env
+.env.*
+
+# Local helper scripts (not part of the project)
+*.bat
+一键推送.bat
