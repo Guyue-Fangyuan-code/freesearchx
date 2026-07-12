@@ -9,15 +9,15 @@
 Free web search, page fetch, and citation checking for the terminal and AI coding tools. No API key, no signup.
 
 ```text
-$ freesearchx "LoRA rank allocation" --academic
+$ freesearchx "python asyncio tutorial" --academic
 
-[1] [paper] AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning
-    https://arxiv.org/abs/2303.10512
-    AdaLoRA adaptively allocates the parameter budget among weight matrices...
+[1] [docs]  asyncio — Asynchronous I/O — Python documentation
+    https://docs.python.org/3/library/asyncio.html
+    asyncio is a library to write concurrent code using the async/await syntax...
 
-[2] [code] QingruZhang/AdaLoRA
-    https://github.com/QingruZhang/AdaLoRA
-    ...
+[2] [code]  python/cpython
+    https://github.com/python/cpython
+    The Python programming language...
 
 7 results (relevance-ranked). Fetch any with: freesearchx --read 'URL'
 ```
@@ -92,25 +92,25 @@ The skill entry file is `SKILL.md`. The CLI script is `scripts/freesearchx.py`.
 
 ```bash
 # search (dynamic 5–20 results by relevance)
-freesearchx "transformer attention"
+freesearchx "rust async runtime comparison"
 
 # fixed count, academic-leaning sources only
-freesearchx "AdaLoRA" --academic -n 8
+freesearchx "attention mechanism survey" --academic -n 8
 
 # fetch one URL (arXiv uses the official API)
-freesearchx --read https://arxiv.org/abs/2303.10512
+freesearchx --read https://arxiv.org/abs/1706.03762
 
 # search and fetch top 3 bodies
-freesearchx "AdaLoRA" --academic --deep --deep-n 3
+freesearchx "fastapi middleware order" --deep --deep-n 3
 
 # citation check
-freesearchx --verify "AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning"
+freesearchx --verify "Attention Is All You Need"
 
 # JSON
-freesearchx "peft survey" -n 10 --json
+freesearchx "kubernetes ingress controller" -n 10 --json
 
 # images / cache
-freesearchx "neural network diagram" --images -n 5
+freesearchx "sql join types diagram" --images -n 5
 freesearchx --cache-info
 freesearchx --clear-cache
 ```
@@ -129,9 +129,9 @@ freesearchx --clear-cache
 ```python
 import freesearchx as fs
 
-fs.search("AdaLoRA", n=5, academic=True)
-fs.fetch("https://arxiv.org/abs/2303.10512")
-fs.verify("AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning")
+fs.search("python asyncio tutorial", n=5, academic=True)
+fs.fetch("https://docs.python.org/3/library/asyncio.html")
+fs.verify("Attention Is All You Need")
 ```
 
 ## Notes

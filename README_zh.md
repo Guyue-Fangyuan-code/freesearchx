@@ -9,15 +9,15 @@
 免费的命令行 / AI 助手联网搜索、网页抓取与引用核实。无需 API key，无需注册。
 
 ```text
-$ freesearchx "LoRA rank allocation" --academic
+$ freesearchx "python asyncio 教程"
 
-[1] [paper] AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning
-    https://arxiv.org/abs/2303.10512
-    AdaLoRA adaptively allocates the parameter budget among weight matrices...
+[1] [docs]  asyncio — Asynchronous I/O — Python 文档
+    https://docs.python.org/zh-cn/3/library/asyncio.html
+    asyncio 是用来编写并发代码的库，使用 async/await 语法...
 
-[2] [code] QingruZhang/AdaLoRA
-    https://github.com/QingruZhang/AdaLoRA
-    ...
+[2] [code]  python/cpython
+    https://github.com/python/cpython
+    The Python programming language...
 
 7 results (relevance-ranked). Fetch any with: freesearchx --read 'URL'
 ```
@@ -92,25 +92,25 @@ pip install -r ~/.claude/skills/freesearchx/requirements.txt
 
 ```bash
 # 搜索（按相关度动态返回 5–20 条）
-freesearchx "transformer attention"
+freesearchx "rust 异步运行时 对比"
 
 # 指定条数，偏学术来源
-freesearchx "AdaLoRA" --academic -n 8
+freesearchx "attention mechanism survey" --academic -n 8
 
 # 抓取单个 URL（arXiv 走官方 API）
-freesearchx --read https://arxiv.org/abs/2303.10512
+freesearchx --read https://arxiv.org/abs/1706.03762
 
 # 搜索并抓取前 3 条正文
-freesearchx "AdaLoRA" --academic --deep --deep-n 3
+freesearchx "fastapi 中间件 顺序" --deep --deep-n 3
 
 # 引用核实
-freesearchx --verify "AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning"
+freesearchx --verify "Attention Is All You Need"
 
 # JSON
-freesearchx "peft survey" -n 10 --json
+freesearchx "kubernetes ingress controller" -n 10 --json
 
 # 图片 / 缓存
-freesearchx "神经网络结构图" --images -n 5
+freesearchx "sql join 示意图" --images -n 5
 freesearchx --cache-info
 freesearchx --clear-cache
 ```
@@ -129,9 +129,9 @@ freesearchx --clear-cache
 ```python
 import freesearchx as fs
 
-fs.search("AdaLoRA", n=5, academic=True)
-fs.fetch("https://arxiv.org/abs/2303.10512")
-fs.verify("AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning")
+fs.search("python asyncio 教程", n=5)
+fs.fetch("https://docs.python.org/3/library/asyncio.html")
+fs.verify("Attention Is All You Need")
 ```
 
 ## 说明

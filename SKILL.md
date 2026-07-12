@@ -61,29 +61,28 @@ Use `--deep` only when you want top-K bodies in one shot.
 
 ```bash
 # 1) Discover (dynamic 5–20, source-tagged)
-python "$SCRIPT" "LoRA rank allocation"
-python "$SCRIPT" "AdaLoRA" --academic -n 10
+python "$SCRIPT" "python asyncio tutorial"
+python "$SCRIPT" "attention mechanism survey" --academic -n 10
 python "$SCRIPT" "query" --json          # structured for parsing
 
 # 2) Deep-read selected hits
-python "$SCRIPT" --read "https://arxiv.org/abs/2303.10512"
-python "$SCRIPT" --read "https://example.com/docs/page"
+python "$SCRIPT" --read "https://arxiv.org/abs/1706.03762"
+python "$SCRIPT" --read "https://docs.python.org/3/library/asyncio.html"
 
 # 1+2 in one call (top 3 bodies by default)
-python "$SCRIPT" "AdaLoRA" --academic --deep
-python "$SCRIPT" "AdaLoRA" --deep --deep-n 5 --json
+python "$SCRIPT" "fastapi middleware order" --deep
+python "$SCRIPT" "query" --deep --deep-n 5 --json
 
 # Citation check (||| separates multiple refs)
-python "$SCRIPT" --verify "AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning"
+python "$SCRIPT" --verify "Attention Is All You Need"
 python "$SCRIPT" --verify "ref one|||ref two" --json
 
 # Images / cache
-python "$SCRIPT" "neural network diagram" --images -n 5
+python "$SCRIPT" "sql join types diagram" --images -n 5
 python "$SCRIPT" --cache-info
 python "$SCRIPT" --clear-cache
 python "$SCRIPT" "query" --no-cache
 ```
-
 If `pip install -e .` was used, `freesearchx ...` is equivalent to
 `python "$SCRIPT" ...`.
 
